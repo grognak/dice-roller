@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <!--<script src="diceRoller.js"></script> -->
+    <script src="diceRoller.js"></script>
     <title>Dice Roller</title>
 </head>
 <body>
@@ -16,9 +16,9 @@
             <img src="images/d4.png" alt="d4">
             <p class="dice-name">d4</p>
             <div class="toggle-options">
-                <button class="button" data-quantity="d4-decrement">-</button>
-                <input class="total" inputmode="numeric" name="d4-total" value="0">
-                <button class="button" data-quantity="d4-increment">+</button>
+                <button class="button" id="d4-decrement" onclick="onDecrementClicked(this)">-</button>
+                <input class="total" inputmode="numeric" id="d4-total" value="0">
+                <button class="button" id="d4-increment" onclick="onIncrementClicked(this)">+</button>
             </div>
         </div>
 
@@ -26,9 +26,9 @@
             <img src="images/d6.png" alt="d6">
             <p class="dice-name">d6</p>
             <div class="toggle-options">
-                <button class="button" data-quantity="d6-decrement">-</button>
+                <button class="button" id="d6-decrement">-</button>
                 <input class="total" inputmode="numeric" name="d6-total" value="0">
-                <button class="button" data-quantity="d6-increment">+</button>
+                <button class="button" id="d6-increment">+</button>
             </div>
         </div>
 
@@ -36,9 +36,9 @@
             <img src="images/d8.png" alt="d8">
             <p class="dice-name">d8</p>
             <div class="toggle-options">
-                <button class="button" data-quantity="d8-decrement">-</button>
+                <button class="button" id="d8-decrement">-</button>
                 <input class="total" inputmode="numeric" name="d8-total" value="0">
-                <button class="button" data-quantity="d8-increment">+</button>
+                <button class="button" id="d8-increment">+</button>
             </div>
         </div>
 
@@ -46,9 +46,9 @@
             <img src="images/d10.png" alt="d10">
             <p class="dice-name">d10</p>
             <div class="toggle-options">
-                <button class="button" data-quantity="d10-decrement">-</button>
+                <button class="button" id="d10-decrement">-</button>
                 <input class="total" inputmode="numeric" name="d10-total" value="0">
-                <button class="button" data-quantity="d10-increment">+</button>
+                <button class="button" id="d10-increment">+</button>
             </div>
         </div>
 
@@ -56,9 +56,9 @@
             <img src="images/dPercentile.png" alt="dPercentile">
             <p class="dice-name">d%</p>
             <div class="toggle-options">
-                <button class="button" data-quantity="dPercentile-decrement">-</button>
+                <button class="button" id="dPercentile-decrement">-</button>
                 <input class="total" inputmode="numeric" name="d%-total" value="0">
-                <button class="button" data-quantity="d%-increment">+</button>
+                <button class="button" id="d%-increment">+</button>
             </div>
         </div>
 
@@ -66,9 +66,9 @@
             <img src="images/d12.png" alt="d12">
             <p class="dice-name">d12</p>
             <div class="toggle-options">
-                <button class="button" data-quantity="d12-decrement">-</button>
+                <button class="button" id="d12-decrement">-</button>
                 <input class="total" inputmode="numeric" name="d12-total" value="0">
-                <button class="button" data-quantity="d12-increment">+</button>
+                <button class="button" id="d12-increment">+</button>
             </div>
         </div>
 
@@ -76,15 +76,15 @@
             <img src="images/d20.png" alt="d20">
             <p class="dice-name">d20</p>
             <div class="toggle-options">
-                <button class="button" data-quantity="d20-decrement">-</button>
+                <button class="button" id="d20-decrement">-</button>
                 <input class="total" inputmode="numeric" name="d20-total" value="0">
-                <button class="button" data-quantity="d20-increment">+</button>
+                <button class="button" id="d20-increment">+</button>
             </div>
         </div>
     </div>
 
     <div class="roll">
-        <button class="roll">ROLL</button>
+        <button>ROLL</button>
     </div>
 
     <div class="terminal">
