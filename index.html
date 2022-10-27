@@ -11,17 +11,41 @@
 <body>
     <h1 class="title">Dice Roller</h1>
 
-    <div class="dice">
-        <img src="images/d4.png" alt="d4">
-        <img src="images/d6.png" alt="d6">
+    <div class="dice-options">
+        <div class="die">
+            <img src="images/d4.png" alt="d4">
+            <p class="dice-name">d4</p>
+            <div class="toggle-options">
+                <button class="button" data-quantity="d4-decrement">-</button>
+                <input class="total" inputmode="numeric" name="d4-total" value="0">
+                <button class="button" data-quantity="d4-increment">+</button>
+            </div>
+        </div>
+
+        <div class="die">
+            <img src="images/d6.png" alt="d6">
+            <p class="dice-name">d6</p>
+            <div class="toggle-options">
+                <button class="button" data-quantity="d6-decrement">-</button>
+                <input class="total" inputmode="numeric" name="d6-total" value="0">
+                <button class="button" data-quantity="d6-increment">+</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <div class="dice">
+        
+        
         <img src="images/d8.png" alt="d8">
         <img src="images/d10.png" alt="d10">
         <img src="images/dPercentile.png" alt="dPercentile">
         <img src="images/d12.png" alt="d12">
         <img src="images/d20.png" alt="d20">
     </div>
-    <div class="buttons">
-        
+    <div class="buttons"> -->
+
     </div>
     <div class="terminal"></div>
 </body>
