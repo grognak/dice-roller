@@ -1,3 +1,14 @@
+/*
+ *  SAMPLE OUTPUT
+ *
+ *  d4 (x6):  4, 2, 1, 3, 1, 1  [total: 12]
+ *  d6 (x1):  6  [total: 6]
+ *  d20 (x3): 12, 9, 5  [total: 26]
+ *  [total: 44]
+ */
+
+
+
 
 /*
  * Checks to see if any dice have been selected.
@@ -14,6 +25,60 @@ function onRollClicked() {
     const d12Dice = rollDice(12, parseInt(document.getElementById("d12-total").value));
     const d20Dice = rollDice(20, parseInt(document.getElementById("d20-total").value));
 
+    var output = "\nResults\n";
+
+    output += formatResults("d4", d4Dice) + formatResults("d6", d6Dice) + 
+    formatResults("d8", d8Dice) + formatResults("d10", d10Dice) + 
+    formatResults("d%", dPercentileDice) + formatResults("d12", d12Dice) +
+    formatResults("d20", d20Dice);
+
+    output += `[total:  ${getTotal(d4Dice, d6Dice, d8Dice, d10Dice, 
+        dPercentileDice, d12Dice, d20Dice)}]`;
+
+    console.log(output);
+
+    //TODO clear dice totals on ROLL click
+    //TODO paste to terminal
+}
+
+function getTotal(d4Dice, d6Dice, d8Dice, d10Dice, dPercentileDice, d12Dice, d20Dice) {
+    let total = d4Dice.concat(d6Dice, d8Dice, d10Dice, dPercentileDice, d12Dice, d20Dice);
+    let sum = 0;
+    for (const value of total) {
+        sum += value;
+    }
+    return sum;
+}
+
+/*
+ * Formats the results for a series of die roles into a more readable format.
+ *  param:  die  string literal of the die used
+ *  param:  values  array of rolled results
+ *  return:  string  updated output string
+ * 
+ * This method returns an empty string if the values array is empty.
+ */
+function formatResults(die, values) {
+    var output = "";
+
+    if (values.length != 0) {
+        output += (`${die} (x${values.length}):  `) //die & rolls
+
+        //results
+        var iterator = values.values();
+        for (let elements of iterator) {
+            output += elements + " ";
+        }
+
+        //total
+        let sum = 0;
+        for (const value of values) {
+            sum += value;
+        }
+        output += ` [total: ${sum}]\n`;
+    }
+
+    return output;
 }
 
 /*
