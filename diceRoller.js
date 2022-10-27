@@ -15,9 +15,27 @@ function onDecrementClicked(obj) {
     const id = obj.id;
     let die = "";
 
-    switch(id) {
+    switch (id) {
         case "d4-decrement":
             die = "d4-total";
+            break;
+        case "d6-decrement":
+            die = "d6-total";
+            break;
+        case "d8-decrement":
+            die = "d8-total";
+            break;
+        case "d10-decrement":
+            die = "d10-total";
+            break;
+        case "d%-decrement":
+            die = "d%-total";
+            break;
+        case "d12-decrement":
+            die = "d12-total";
+            break;
+        case "d20-decrement":
+            die = "d20-total";
             break;
     }
 
@@ -37,9 +55,27 @@ function onIncrementClicked(obj) {
     const id = obj.id;
     let die = "";
 
-    switch(id) {
+    switch (id) {
         case "d4-increment":
             die = "d4-total";
+            break;
+        case "d6-increment":
+            die = "d6-total";
+            break;
+        case "d8-increment":
+            die = "d8-total";
+            break;
+        case "d10-increment":
+            die = "d10-total";
+            break;
+        case "d%-increment":
+            die = "d%-total";
+            break;
+        case "d12-increment":
+            die = "d12-total";
+            break;
+        case "d20-increment":
+            die = "d20-total";
             break;
     }
 
